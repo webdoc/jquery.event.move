@@ -5,8 +5,8 @@ title: jQuery.event.move
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<meta name="author" content="Stephen Band">
-	<meta name="description" content="jQuery special events movestart, move and moveend for tracking touch and mouse moves, throttled to browser animation frames, and exposing information about distance and velocity of fingers.">
+	<meta name="author" content="">
+	<meta name="description" content="">
 	
 	<title>jQuery.event.move</title>
 	
@@ -21,15 +21,13 @@ title: jQuery.event.move
 	<link rel="icon" type="image/png" href="images/favicon.png" />
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 	
-	<link rel="stylesheet" type="text/css" href="http://stephband.github.com/template/css/template.reset.css" />
-	<link rel="stylesheet" type="text/css" href="http://stephband.github.com/template/css/template.typography.css" />
-	<link rel="stylesheet" type="text/css" href="http://stephband.github.com/template/css/template.typography.14_20.css" />
-	<link rel="stylesheet" type="text/css" href="http://stephband.github.com/template/css/template.forms.css" />
-	<link rel="stylesheet" type="text/css" href="http://stephband.github.com/template/css/template.classes.css" />
-	<link rel="stylesheet" type="text/css" href="http://stephband.github.com/template/css/template.theme.css" />
-	<link rel="stylesheet" type="text/css" href="http://stephband.github.com/css/site.layout.css?6" />
-	<link rel="stylesheet" type="text/css" href="http://stephband.github.com/css/docs.classes.css?6" />
+	<link rel="stylesheet" type="text/css" href="http://stephband.info/css/template.min.css" />
+	<link rel="stylesheet" type="text/css" href="http://stephband.info/css/template.theme.min.css" />
+	
+	<link rel="stylesheet" type="text/css" href="http://stephband.github.com/css/site.layout.css" />
+	<link rel="stylesheet" type="text/css" href="http://stephband.github.com/css/docs.classes.css" />
 	<link rel="stylesheet" type="text/css" href="http://stephband.github.com/css/site.highlight.light.css" />
+	
 	<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="http://stephband.github.com/template/css/template.ie.css" /><![endif]-->
 	<!--[if IE 8]><link rel="stylesheet" type="text/css" href="http://stephband.github.com/template/css/template.ie8.css" /><![endif]-->
 	<!--[if IE 7]><link rel="stylesheet" type="text/css" href="http://stephband.github.com/template/css/template.ie7.css" /><![endif]-->
@@ -51,8 +49,8 @@ title: jQuery.event.move
 
 		.resize, .rotate {
 		  position: absolute;
-		  width: 20px;
-		  height: 20px;
+		  width: 32px;
+		  height: 32px;
 		}
 		
 		.resize {
@@ -174,9 +172,9 @@ jQuery('.mydiv')
   // move is complete!
 });{% endhighlight %}
 		
-		<h2 id="why1">Why not just use mouse or touch events?</h2>
+		<h2 id="why1">Why not just use raw mouse or touch events?</h2>
 		
-		<p>Well, yes, you could. But jquery.event.move abstracts away the details that need attention when writing this kind of interaction model with raw mouse or touch events:</p>
+		<p>Well, yes, you could. But jquery.event.move abstracts away the details that need attention when writing this kind of interaction model with mouse and touch events:</p>
 		
 		<ul>
 			<li>Supports mouse and touch devices, exposing the same event API for both</li>
@@ -197,7 +195,7 @@ jQuery('.mydiv')
 		
 		<h2 id="why2">What about drag events?</h2>
 		
-		<p>Move events are designed to compliment drag events, where the two have different meanings: drag events are for transferring data while move events are for making responsive interfaces.
+		<p>Move events are designed to compliment drag events, where the two have different meanings: drag events are for transferring data while move events are for making interactive interfaces.
 		That said, <code>movestart</code>, <code>move</code> and <code>moveend</code> events deliberately echo <code>dragstart</code>, <code>drag</code> and <code>dragend</code> events, with one significant difference:
 		where the <code>drag</code> event fires continuously whether you have moved the pointer or not, the <code>move</code> event fires only after the pointer has been moved.</p>
 		
@@ -206,19 +204,45 @@ jQuery('.mydiv')
 		
 		<h2 id="where">Where is jquery.event.move being used?</h2>
 		
-		<p>It's part of the <a href="stephband.info/template">template</a> project. It's used for:</p>
+		<p>It's part of my front-end toolkit, <a href="http://stephband.info/bolt">Bolt</a>. It's also used for:</p>
 	
 		<ul>
 			<li><a href="http://www.webdoc.com">webdoc.com</a></li>
 			<li><a href="http://stephband.info/jquery.event.swipe">jquery.event.swipe</a></li>
 		</ul>
-	
-		<h2 id="where">Who made it?</h2>
 		
-		<p>I made it. I'm <a href="http://twitter.com/stephband">stephband</a> on twitter, if you're into that sort of thing.</p>
+		<p>Do let me know at <a href="http://twitter.com/stephband">@stephband</a> if you use it in your project. Cheers!</p>
 	</div>
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+	<footer class="site_footer">
+		<div class="full_wrap wrap">
+			<div class="bio_col col">
+				<h3>Who made this?</h3>
+				<p>I did. I come from Scotland and I live in Lausanne, Switzerland. I make web things at <a href="http://cruncher.ch">Cruncher</a>. I miss Branston Pickle. When I'm not glued to a screen I play music and hike mountains.</p>
+			</div
+			><div class="repo_col col">
+				<h3>More code</h3>
+				<ul class="repo_index index">
+					<li><a href="http://stephband.info/bolt">Bolt</a></li>
+					<li><a href="http://stephband.info/jparallax/">jQuery.parallax</a></li>
+					<li><a href="http://stephband.info/jquery.event.tap/">jQuery.event.tap</a></li>
+					<li><a href="http://stephband.info/jquery.event.move/">jQuery.event.move</a></li>
+					<li><a href="http://stephband.info/jquery.event.swipe/">jQuery.event.swipe</a></li>
+				</ul>
+			</div
+			><div class="social_col col">
+				<h3>Find me on...</h3>
+				<ul class="social_index index">
+					<li><a href="http://twitter.com/stephband">twitter</a></li>
+					<li><a href="http://github.com/stephband">github</a></li>
+					<li><a href="http://plus.google.com/114566808430966059989/photos">google+</a></li>
+					<li><a href="http://www.linkedin.com/profile/view?id=27013870">linkedin</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.js"></script>
 	<script src="js/jquery.event.move.js"></script>
 	<script>
 		Number.prototype.deg = function() { return this * 57.295779513; }
@@ -256,7 +280,7 @@ jQuery('.mydiv')
 		
 		// log event objects
 		
-		function logEvent(e){ console.log(e.type, e); }
+		function logEvent(e){ window.console && console.log(e.type, e); }
 		
 		jQuery(document)
 		.bind('mousedown mouseup', logEvent)
